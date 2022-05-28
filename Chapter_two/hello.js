@@ -1,0 +1,7 @@
+console.log('Hello World')
+console.log('I Love Bangladesh')
+console.log(45)
+console.log('my Fav No: ' +9)
+console.log(9 + 9)
+console.log('9' + 9)
+console.log('my favorite no: 9+9='+18)
