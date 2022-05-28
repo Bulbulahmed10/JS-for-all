@@ -1,6 +1,6 @@
-// console.log(Math.E)
-// console.log(Math.PI)
-// console.log(4.589)
+console.log(Math.E)
+console.log(Math.PI)
+console.log(4.589)
 
 var n = 10.389
 

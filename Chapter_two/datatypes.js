@@ -1,22 +1,22 @@
-////// primitive
-////number
-//10 4.5 8.12 3.14
+//// primitive
+//number
+10 4.5 8.12 3.14
 
-////String
-//'this is a text' + "this is also  text"
+//String
+'this is a text' + "this is also  text"
 
-////Boolean
-//true
-//false
+//Boolean
+true
+false
 
-//undefined
-//null
+undefined
+null
 
 
-//////object
-//Array
-//object
-//Function
+////object
+Array
+object
+Function
 
 // ********** NUMBERS **********
 

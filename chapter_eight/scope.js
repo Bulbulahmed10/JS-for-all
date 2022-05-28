@@ -1,12 +1,12 @@
 var a = 'abc'
-// if (true) {
-//   var b = 'I am a'
-//   if(true) {
-//     var b = 'I am B'
-//   }
-// }
+if (true) {
+  var b = 'I am a'
+  if(true) {
+    var b = 'I am B'
+  }
+}
 
-// console.log(b);
+console.log(b);
 
 function x() {
   var a = 20

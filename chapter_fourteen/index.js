@@ -1,74 +1,74 @@
-// function extend(Parent, Child) {
+function extend(Parent, Child) {
 
-//   Child.prototype = Object.create(Parent.prototype);
-//   Child.prototype.constructor = Child
-// }
-
-
-// function Shape(color) {
-//   this.color = color;
-// }
-
-// Shape.prototype.common = function () {
-//   console.log("I am Common Method");
-// };
-
-// function Square(width, color) {
-//   Shape.call(this, color);
-//   // console.log( Shape.call(this, tree));
-//   this.width = width;
-// }
-
-// extend(Shape, Square)
-
-// Square.prototype.draw = function () {
-//   console.log("Drawing");
-// };
-
-// // var shape = new Shape();
-// var sqr = new Square(48, "green");
-
-// function Circle(radius, color) {
-//   Shape.call(this, color);
-//   this.radius = this.radius;
-// }
-// extend(Shape, Circle)
-
-// Circle.prototype.common = function () {
-//   Shape.prototype.common.call(this)
-//   console.log('I am calling from circle and i have overridden');
-// }
-
-// var c = new Circle(4, 'black')
+  Child.prototype = Object.create(Parent.prototype);
+  Child.prototype.constructor = Child
+}
 
 
-// function Shape(color) {
-//   this.color = color
+function Shape(color) {
+  this.color = color;
+}
 
-//   // this.country = country
-// }
+Shape.prototype.common = function () {
+  console.log("I am Common Method");
+};
 
-// Shape.prototype.common = function () {
-//   console.log("I am Common Method");
-// };
+function Square(width, color) {
+  Shape.call(this, color);
+  // console.log( Shape.call(this, tree));
+  this.width = width;
+}
 
-// function Square(width, color, tree, country) {
+extend(Shape, Square)
 
-//   Shape.call(this, color)
-//    this.tree = tree;
-//    this.country = country
-//   this.width = width;
-// }
-
-// Square.prototype = Object.create(Shape.prototype);
-// Square.prototype.constructor = Square
-
-// Square.prototype.draw = function () {
-//   console.log("Drawing");
-// };
+Square.prototype.draw = function () {
+  console.log("Drawing");
+};
 
 // var shape = new Shape();
-// var sqr = new Square(48, 'green', 'mango', 'Bangladesh')
+var sqr = new Square(48, "green");
+
+function Circle(radius, color) {
+  Shape.call(this, color);
+  this.radius = this.radius;
+}
+extend(Shape, Circle)
+
+Circle.prototype.common = function () {
+  Shape.prototype.common.call(this)
+  console.log('I am calling from circle and i have overridden');
+}
+
+var c = new Circle(4, 'black')
+
+
+function Shape(color) {
+  this.color = color
+
+  // this.country = country
+}
+
+Shape.prototype.common = function () {
+  console.log("I am Common Method");
+};
+
+function Square(width, color, tree, country) {
+
+  Shape.call(this, color)
+   this.tree = tree;
+   this.country = country
+  this.width = width;
+}
+
+Square.prototype = Object.create(Shape.prototype);
+Square.prototype.constructor = Square
+
+Square.prototype.draw = function () {
+  console.log("Drawing");
+};
+
+var shape = new Shape();
+var sqr = new Square(48, 'green', 'mango', 'Bangladesh')
 
 function mixin(target, ...sources) {
   Object.assign(target, ...sources)

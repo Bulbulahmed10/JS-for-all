@@ -1,8 +1,8 @@
-// abc()
-// function abc() {
-//   console.log('l am function');
-// }
-// abc()
+abc()
+function abc() {
+  console.log('l am function');
+}
+abc()
 
 // Creational phase
 // abc = ref

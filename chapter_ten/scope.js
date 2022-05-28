@@ -1,23 +1,23 @@
-// {
+{
 
-//  var x = 55
+ var x = 55
 
-//   function test() {
-//   var x = 45
-//   //  console.log(x);
+  function test() {
+  var x = 45
+  //  console.log(x);
 
-//   function nested() {
-//     // var y = 84
-//     var x = 48
-//   }
-//   // console.log(y);
-//   console.log(x);
-//   nested()
-//  }
+  function nested() {
+    // var y = 84
+    var x = 48
+  }
+  // console.log(y);
+  console.log(x);
+  nested()
+ }
 
-//  test()
+ test()
 
-// }
+}
 
  var a = 11
 

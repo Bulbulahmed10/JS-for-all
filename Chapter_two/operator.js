@@ -1,38 +1,38 @@
-//// Arithmetic Operator
-// + - * / % ++ --
+// Arithmetic Operator
++ - * / % ++ --
 
-// var a = 14
-// var b = 6
+var a = 14
+var b = 6
 
-// //console.log(a % b)
-
-
-// //// Incremental
-// // Pre Incremental - Post incremental
-
-// console.log(a++)
-// console.log(a)
+//console.log(a % b)
 
 
-////assignment operator
-// var a = 10
-// var b = 20
-// a += b
-// console.log(a)
+//// Incremental
+// Pre Incremental - Post incremental
 
-// a -= b
-// console.log(a)
+console.log(a++)
+console.log(a)
 
-// a *= b
-// console.log(a)
 
-// a /= b
-// console.log(a)
+//assignment operator
+var a = 10
+var b = 20
+a += b
+console.log(a)
 
-// a %= b 
-// console.log(a)
+a -= b
+console.log(a)
 
-//// Comparison operator
+a *= b
+console.log(a)
+
+a /= b
+console.log(a)
+
+a %= b 
+console.log(a)
+
+// Comparison operator
 
 var a = 10
 var b = 20

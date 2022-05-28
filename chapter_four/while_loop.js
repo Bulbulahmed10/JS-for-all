@@ -1,13 +1,13 @@
 
-// for (var i = 1; i <=10; i++) {
-//   console.log(i)
-// }
+for (var i = 1; i <=10; i++) {
+  console.log(i)
+}
 
-// var i = 10;
+var i = 10;
 
-// while(i<=100) {
-//   console.log(i)
-//   i++
+while(i<=100) {
+  console.log(i)
+  i++
 
 
 var isRunning = true
