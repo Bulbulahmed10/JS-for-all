@@ -29,3 +29,106 @@ for (let i = 0; i < 7; i++) {
 }
 
 console.log(i);
+
+ let add = (a, b) => a + b
+
+console.log(add(45, 62));
+
+
+let sqr = x => x*x 
+console.log(sqr(8));
+
+function testMe() {
+  console.log(this);
+}
+
+let obj = {
+  name: 'Bulbul Ahmed',
+  print: () => {
+    console.log(this);
+  }
+}
+
+testMe()
+obj.print()
+
+let obj = {
+  name: 'Bulbul Ahmed',
+  print : function() {
+    console.log(this.name);
+    setTimeout(function() {
+      alert(`Hello, ${this.name}`)
+    }, 1000)
+  }
+}
+obj.print()
+
+Default parameters in javascript
+
+function sqr(n=1) {
+  return n*n
+}
+
+console.log(sqr());
+
+first problem solve and explain
+
+let nums = [5, 10, 20]
+let sum = nums[1] + nums.sort()[1]
+
+console.log(sum);
+
+const months = ['March', 'Jan', 'Feb', 'Dea', 'Dad','Dcb', 'Daa'];
+months.sort();
+console.log(months);
+
+10
+
+5, 10, 20
+
+10, 20, 5
+
+
+let obj = {
+  start : 1,
+  end : 10,
+  [Symbol.iterator]: function() {
+    let currentValue = this.start 
+    const self = this
+    return{
+      next() {
+        return {
+          done: currentValue > self.end,
+          value: currentValue++
+        }
+      }
+    }
+  }
+}
+
+for (let v of obj) {
+
+  console.log(v);
+}
+
+function sum (...rest) {
+  return rest.reduce(a,b) =>  a + b)
+}
+console.log(sum(1, 2, 3, 4))
+
+
+let a = [1, 2, 3]
+
+console.log(...a);
+
+let obj = {
+  a: 10,
+  b: 20,
+  c: 30
+}
+
+
+let obj2 = {
+  ...obj 
+}
+
