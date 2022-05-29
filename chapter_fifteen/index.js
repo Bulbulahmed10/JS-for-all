@@ -163,3 +163,30 @@ let arr = [1, 2, 3, 4, 5]
 
 let [first, second, , , last] = arr
 console.log(first, second, last );
+
+var obj = {
+  a: 10,
+  b: 20
+}
+console.log(Object.entries(obj));
+
+var objArr = [
+  ['a', 10],
+  ['b', 20]
+]
+
+console.log(Object.fromEntries(objArr));
+
+
+let s1 = Symbol()
+let s2 = Symbol('test symbol')
+
+console.log(s1);
+console.log(s2);
+
+console.log(s1 === s2);
+
+let toss = {
+  HEAD: Symbol('HEAD'),
+  TAIL: Symbol('TAIL')
+}
