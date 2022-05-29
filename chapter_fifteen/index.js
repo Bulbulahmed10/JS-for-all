@@ -4,6 +4,8 @@ rerrj   jgjj
               gtitttuurert`
               console.log(s);
 
+const { CleanPlugin } = require("webpack");
+
 var age = 13
 var name = 'Bulbul Ahmed'
 console.log(`My name is ${name} and I am ${age} years old. I am ${age < 18 ? 'not': ''} adult`);  
@@ -12,10 +14,10 @@ console.log(name.padStart(40, ' *'));
 console.log(name.padEnd(20, ' a'));
 console.log('B'.repeat(15)); 
 
-// var vs let vs const
+var vs let vs const
 
-// let a = 10
-// a = 100
+let a = 10
+a = 100
 
 // console.log(a);
 
@@ -132,3 +134,32 @@ let obj2 = {
   ...obj 
 }
 
+let a = 10, b = 20
+
+let obj = {
+  a, 
+  b,
+  print() {
+    console.log(this);
+  }
+}
+
+obj.print()
+
+var person = {
+  name: 'BulBul Ahmed',
+  email: 'bulbulahmed@gamil.com',
+  address: {
+    city:'Dhaka',
+    country: 'Bangladesh'
+  }
+}
+
+let { name, email, address, address:{city, country}} = person
+console.log(name, email, city, country); 
+
+
+let arr = [1, 2, 3, 4, 5]
+
+let [first, second, , , last] = arr
+console.log(first, second, last );
