@@ -280,30 +280,43 @@
 // console.log(set.keys());
 // console.log(set.values());
 
-let map = new Map(
-  [
-    ['a', 10],
-    ['b', 20],
-    ['c', 30]
+// let map = new Map(
+//   [
+//     ['a', 10],
+//     ['b', 20],
+//     ['c', 30]
 
-  ]
-)
-map.set('d', 40)
-map.set({name: 'Bulbul Ahmed'}, 44)
-map.delete('c')
-console.log(map);
-console.log(map.get('b'));
-console.log(map.values());
-console.log(map.keys());
-console.log(map.entries());
+//   ]
+// )
+// map.set('d', 40)
+// map.set({name: 'Bulbul Ahmed'}, 44)
+// map.delete('c')
+// console.log(map);
+// console.log(map.get('b'));
+// console.log(map.values());
+// console.log(map.keys());
+// console.log(map.entries());
 
 
-for (let [v, k] of map) {
-  console.log(v, k);
-}
+// for (let [v, k] of map) {
+//   console.log(v, k);
+// }
 
 // map.forEach((v, k)) => {
 //   console.log(k, v)
 // }
 
 
+
+let a = {a: 10}, b = {b: 20}
+// let set = new Set([a, b])
+
+// a = null
+// console.log(set);
+
+// let arr = [...set]
+// console.log(arr);
+
+let weakSet = new WeakSet([a, b])
+a = null
+console.log(weakSet.has(b));
