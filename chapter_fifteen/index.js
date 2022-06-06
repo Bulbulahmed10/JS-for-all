@@ -4,6 +4,8 @@
 //               gtitttuurert`
 //               console.log(s);
 
+// const { LibManifestPlugin } = require("webpack");
+
 // const { Generator } = require("webpack")
 
 // const { CleanPlugin } = require("webpack");
@@ -266,17 +268,42 @@
 
 
 
-let set = new Set([1, 2, 3])
-set.add(5)
-set.add(6)
-set.add(1)
-set.add(2)
+// let set = new Set([1, 2, 3])
+// set.add(5)
+// set.add(6)
+// set.add(1)
+// set.add(2)
 
-console.log(set.has(5));
-console.log(set);
-console.log(set.size);
-console.log(set.keys());
-console.log(set.values());
+// console.log(set.has(5));
+// console.log(set);
+// console.log(set.size);
+// console.log(set.keys());
+// console.log(set.values());
 
+let map = new Map(
+  [
+    ['a', 10],
+    ['b', 20],
+    ['c', 30]
+
+  ]
+)
+map.set('d', 40)
+map.set({name: 'Bulbul Ahmed'}, 44)
+map.delete('c')
+console.log(map);
+console.log(map.get('b'));
+console.log(map.values());
+console.log(map.keys());
+console.log(map.entries());
+
+
+for (let [v, k] of map) {
+  console.log(v, k);
+}
+
+// map.forEach((v, k)) => {
+//   console.log(k, v)
+// }
 
 
