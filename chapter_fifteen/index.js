@@ -232,37 +232,51 @@
 // added for loop and generator
 
 // const arr = [1, 2, 3]
-for (let v of arr) {
-  console.log(v);
-}
+// for (let v of arr) {
+//   console.log(v);
+// }
 
-for (let v of 'BulBul Ahmed') {
-  console.log(v);
-}
+// for (let v of 'BulBul Ahmed') {
+//   console.log(v);
+// }
 
-let obj = {
-  a: 10,
-  b: 20
-}
+// let obj = {
+//   a: 10,
+//   b: 20
+// }
 
-for (let v of obj) {
-  console.log(v);
-}
+// for (let v of obj) {
+//   console.log(v);
+// }
 
-const arr = [1, 2, 3]
+// const arr = [1, 2, 3]
 
- function* generate(collection) {
-   for (let i = 0; i < collection.length; i++) {
-     yield collection[i]
-   }
- }
+//  function* generate(collection) {
+//    for (let i = 0; i < collection.length; i++) {
+//      yield collection[i]
+//    }
+//  }
 
- let it = generate(arr)
- console.log(it.next());
- console.log(it.next());
- console.log(it.next());
- console.log(it.next());
+//  let it = generate(arr)
+//  console.log(it.next());
+//  console.log(it.next());
+//  console.log(it.next());
+//  console.log(it.next());
 
+
+
+
+let set = new Set([1, 2, 3])
+set.add(5)
+set.add(6)
+set.add(1)
+set.add(2)
+
+console.log(set.has(5));
+console.log(set);
+console.log(set.size);
+console.log(set.keys());
+console.log(set.values());
 
 
 
