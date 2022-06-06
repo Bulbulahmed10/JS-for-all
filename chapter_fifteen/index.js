@@ -4,6 +4,8 @@
 //               gtitttuurert`
 //               console.log(s);
 
+// const { Generator } = require("webpack")
+
 // const { CleanPlugin } = require("webpack");
 
 // var age = 13
@@ -209,22 +211,57 @@
 //     }
 //   }
 // }
+// const arr = [1, 2, 3]
+
+// let iterate = arr[Symbol.iterator]()
+
+// console.log(iterate.next());
+// console.log(iterate.next());
+// console.log(iterate.next());
+// console.log(iterate.next());
+
+// let str = 'TEXT'
+// let iterateText = str[Symbol.iterator]()
+// console.log(iterateText.next());
+// console.log(iterateText.next());
+// console.log(iterateText.next());
+// console.log(iterateText.next());
+// console.log(iterateText.next());
+
+
+// added for loop and generator
+
+// const arr = [1, 2, 3]
+for (let v of arr) {
+  console.log(v);
+}
+
+for (let v of 'BulBul Ahmed') {
+  console.log(v);
+}
+
+let obj = {
+  a: 10,
+  b: 20
+}
+
+for (let v of obj) {
+  console.log(v);
+}
+
 const arr = [1, 2, 3]
 
-let iterate = arr[Symbol.iterator]()
+ function* generate(collection) {
+   for (let i = 0; i < collection.length; i++) {
+     yield collection[i]
+   }
+ }
 
-console.log(iterate.next());
-console.log(iterate.next());
-console.log(iterate.next());
-console.log(iterate.next());
-
-let str = 'TEXT'
-let iterateText = str[Symbol.iterator]()
-console.log(iterateText.next());
-console.log(iterateText.next());
-console.log(iterateText.next());
-console.log(iterateText.next());
-console.log(iterateText.next());
+ let it = generate(arr)
+ console.log(it.next());
+ console.log(it.next());
+ console.log(it.next());
+ console.log(it.next());
 
 
 
