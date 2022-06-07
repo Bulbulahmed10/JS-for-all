@@ -345,18 +345,39 @@
 // let rect1 = new Rectangle(12, 14)
 
 
-class Rectangle {
-  constructor(width, height) {
-    this.width = width
-    this.height = height
+// class Rectangle {
+//   constructor(width, height) {
+//     this.width = width
+//     this.height = height
+//   }
+//   draw() {
+//     console.log('Drawing...');
+//   }
+// }
+
+// let rect1 = new Rectangle(45, 56)
+// console.log(rect1);
+
+
+class Person {
+  constructor(name, email) {
+    this.name = name
+    this.email = email
   }
-  draw() {
-    console.log('Drawing...');
+  print() {
+    console.log(this.name, this.email);
+  }
+  static create(str) {
+    let person = JSON.parse(str)
+    return new Person(person.name, person.email)
   }
 }
 
-let rect1 = new Rectangle(45, 56)
-console.log(rect1);
+let str = '{"name": "Bulbul Ahmed", "email": "bulbulahmed@gmail.com"}'
 
+let p1 = Person.create(str)
+console.log(p1);
+console.log(p1 instanceof Person);
+p1.print()
 
  
