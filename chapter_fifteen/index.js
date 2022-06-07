@@ -4,6 +4,8 @@
 //               gtitttuurert`
 //               console.log(s);
 
+// const { CleanPlugin } = require("webpack");
+
 // const { LibManifestPlugin } = require("webpack");
 
 // const { Generator } = require("webpack")
@@ -308,7 +310,7 @@
 
 
 
-let a = {a: 10}, b = {b: 20}
+// let a = {a: 10}, b = {b: 20}
 // let set = new Set([a, b])
 
 // a = null
@@ -317,6 +319,44 @@ let a = {a: 10}, b = {b: 20}
 // let arr = [...set]
 // console.log(arr);
 
-let weakSet = new WeakSet([a, b])
-a = null
-console.log(weakSet.has(b));
+// let weakSet = new WeakSet([a, b])
+// a = null
+// console.log(weakSet.has(b));
+
+//  let weakMap = new WeakMap([[a, 45],[b, 85]])
+
+// a = null
+//  console.log(weakMap.get(a));
+//  console.log(weakMap.has(b));
+
+
+
+
+// function Rectangle(width, height) {
+//   this.width = width 
+//   this.height = height
+// }
+
+// Rectangle.prototype.draw = function () {
+//   console.log(this);
+//   console.log('Drawing...');
+// }
+
+// let rect1 = new Rectangle(12, 14)
+
+
+class Rectangle {
+  constructor(width, height) {
+    this.width = width
+    this.height = height
+  }
+  draw() {
+    console.log('Drawing...');
+  }
+}
+
+let rect1 = new Rectangle(45, 56)
+console.log(rect1);
+
+
+ 
