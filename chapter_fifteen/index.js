@@ -1,5 +1,5 @@
 // var s = `fjjjjrjrj
-// erjre 
+// erjre
 // rerrj   jgjj
 //               gtitttuurert`
 //               console.log(s);
@@ -14,11 +14,11 @@
 
 // var age = 13
 // var name = 'Bulbul Ahmed'
-// console.log(`My name is ${name} and I am ${age} years old. I am ${age < 18 ? 'not': ''} adult`);  
+// console.log(`My name is ${name} and I am ${age} years old. I am ${age < 18 ? 'not': ''} adult`);
 
 // console.log(name.padStart(40, ' *'));
 // console.log(name.padEnd(20, ' a'));
-// console.log('B'.repeat(15)); 
+// console.log('B'.repeat(15));
 
 // var vs let vs const
 
@@ -42,8 +42,7 @@
 
 // console.log(add(45, 62));
 
-
-// let sqr = x => x*x 
+// let sqr = x => x*x
 // console.log(sqr(8));
 
 // function testMe() {
@@ -96,12 +95,11 @@
 
 // 10, 20, 5
 
-
 // let obj = {
 //   start : 1,
 //   end : 10,
 //   [Symbol.iterator]: function() {
-//     let currentValue = this.start 
+//     let currentValue = this.start
 //     const self = this
 //     return{
 //       next() {
@@ -124,7 +122,6 @@
 // }
 // console.log(sum(1, 2, 3, 4))
 
-
 // let a = [1, 2, 3]
 
 // console.log(...a);
@@ -135,15 +132,14 @@
 //   c: 30
 // }
 
-
 // let obj2 = {
-//   ...obj 
+//   ...obj
 // }
 
 // let a = 10, b = 20
 
 // let obj = {
-//   a, 
+//   a,
 //   b,
 //   print() {
 //     console.log(this);
@@ -162,8 +158,7 @@
 // }
 
 // let { name, email, address, address:{city, country}} = person
-// console.log(name, email, city, country); 
-
+// console.log(name, email, city, country);
 
 // let arr = [1, 2, 3, 4, 5]
 
@@ -183,7 +178,6 @@
 
 // console.log(Object.fromEntries(objArr));
 
-
 // let s1 = Symbol()
 // let s2 = Symbol('test symbol')
 
@@ -196,7 +190,6 @@
 //   HEAD: Symbol('HEAD'),
 //   TAIL: Symbol('TAIL')
 // }
-
 
 // const arr = [1, 2, 3]
 
@@ -232,7 +225,6 @@
 // console.log(iterateText.next());
 // console.log(iterateText.next());
 
-
 // added for loop and generator
 
 // const arr = [1, 2, 3]
@@ -267,9 +259,6 @@
 //  console.log(it.next());
 //  console.log(it.next());
 
-
-
-
 // let set = new Set([1, 2, 3])
 // set.add(5)
 // set.add(6)
@@ -299,7 +288,6 @@
 // console.log(map.keys());
 // console.log(map.entries());
 
-
 // for (let [v, k] of map) {
 //   console.log(v, k);
 // }
@@ -307,8 +295,6 @@
 // map.forEach((v, k)) => {
 //   console.log(k, v)
 // }
-
-
 
 // let a = {a: 10}, b = {b: 20}
 // let set = new Set([a, b])
@@ -329,11 +315,8 @@
 //  console.log(weakMap.get(a));
 //  console.log(weakMap.has(b));
 
-
-
-
 // function Rectangle(width, height) {
-//   this.width = width 
+//   this.width = width
 //   this.height = height
 // }
 
@@ -343,7 +326,6 @@
 // }
 
 // let rect1 = new Rectangle(12, 14)
-
 
 // class Rectangle {
 //   constructor(width, height) {
@@ -358,26 +340,65 @@
 // let rect1 = new Rectangle(45, 56)
 // console.log(rect1);
 
+// class Person {
+//   constructor(name, email) {
+//     this.name = name;
+//     this.email = email;
+//   }
+//   print() {
+//     console.log(this.name, this.email);
+//   }
+//   test () {
+//     console.log(this);
+//   }
+//   static create(str) {
+//     let person = JSON.parse(str);
+//     return new Person(person.name, person.email);
+//   }
+// }
 
-class Person {
-  constructor(name, email) {
-    this.name = name
-    this.email = email
-  }
-  print() {
-    console.log(this.name, this.email);
-  }
-  static create(str) {
-    let person = JSON.parse(str)
-    return new Person(person.name, person.email)
+// let str = '{"name": "Bulbul Ahmed", "email": "bulbulahmed@gmail.com"}';
+
+// let p1 = Person.create(str);
+// console.log(p1);
+// console.log(p1 instanceof Person);
+// p1.print();
+
+
+
+
+function Shape() {
+  this.draw = function () {
+    console.log(this);
   }
 }
 
-let str = '{"name": "Bulbul Ahmed", "email": "bulbulahmed@gmail.com"}'
+let s1 = new Shape() 
+let anotherDraw = s1.draw
+anotherDraw()
 
-let p1 = Person.create(str)
-console.log(p1);
-console.log(p1 instanceof Person);
-p1.print()
+let test = p1.test
+test()
 
- 
+const _radius = Symbol()
+const _name = Symbol()
+const _draw = Symbol()
+class Circle {
+  constructor(radius, name) {
+    this[_radius] = radius
+    this[_name] = name
+  }
+
+  [_draw]() {
+    console.log('Drawing...');
+  }
+}
+
+let c1 = new Circle(2, 'CRED')
+console.log(c1);
+
+console.log(Object.getOwnPropertyNames(c1));
+let key = Object.getOwnPropertySymbols(c1)[1]
+console.log(c1[key]);
+
+
