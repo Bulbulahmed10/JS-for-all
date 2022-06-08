@@ -445,27 +445,38 @@
 // c1.radius = 100
 // console.log(c1.radius);
 
-class Shape {
-  constructor(color) {
-    this.color = color
-  }
-  draw() {
-    console.log('Drawing');
-  }
-}
+// class Shape {
+//   constructor(color) {
+//     this.color = color
+//   }
+//   draw() {
+//     console.log('Drawing');
+//   }
+// }
+  
+// class Rectangle extends Shape {
+//   constructor(color,width, height) {
+//     super(color)
+//     this.width = width
+//     this.height = height
+//   }
 
-class Rectangle extends Shape {
-  constructor(color,width, height) {
-    super(color)
-    this.width = width
-    this.height = height
-  }
+//   draw() {
+//     console.log('Drawing a Rectangle...');
+//   }
 
-  calculate() {
-    return this.width * this.height
-  }
+//   calculate() {
+//     return this.width * this.height
+//   }
 
-} 
-let r = new Rectangle('green', 4, 5)  
-console.log(r);
-r.draw()
+// } 
+
+
+// import Rectangle from "./Rectangle";
+// let r = new Rectangle('green', 4, 5)  
+// console.log(r);
+// r.draw()
+
+import * as func from './func'
+console.log(func);
+
