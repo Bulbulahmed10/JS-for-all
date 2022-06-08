@@ -367,38 +367,54 @@
 
 
 
-function Shape() {
-  this.draw = function () {
-    console.log(this);
-  }
-}
+// function Shape() {
+//   this.draw = function () {
+//     console.log(this);
+//   }
+// }
 
-let s1 = new Shape() 
-let anotherDraw = s1.draw
-anotherDraw()
+// let s1 = new Shape() 
+// let anotherDraw = s1.draw
+// anotherDraw()
 
-let test = p1.test
-test()
+// let test = p1.test
+// test()
 
-const _radius = Symbol()
-const _name = Symbol()
-const _draw = Symbol()
+// const _radius = Symbol()
+// const _name = Symbol()
+// const _draw = Symbol()
+// class Circle {
+//   constructor(radius, name) {
+//     this[_radius] = radius
+//     this[_name] = name
+//   }
+
+//   [_draw]() {
+//     console.log('Drawing...');
+//   }
+// }
+
+// let c1 = new Circle(2, 'CRED')
+// console.log(c1);
+
+// console.log(Object.getOwnPropertyNames(c1));
+// let key = Object.getOwnPropertySymbols(c1)[1]
+// console.log(c1[key]);
+
+const _radius = new WeakMap()
+const _name = new WeakMap()
 class Circle {
   constructor(radius, name) {
-    this[_radius] = radius
-    this[_name] = name
+    _radius.set(this, radius)
+    _name.set(this, name)
   }
 
-  [_draw]() {
+  draw() {
     console.log('Drawing...');
-  }
+    console.log(_radius.get(this), _name.get(this));
+  } 
 }
 
 let c1 = new Circle(2, 'CRED')
-console.log(c1);
-
-console.log(Object.getOwnPropertyNames(c1));
-let key = Object.getOwnPropertySymbols(c1)[1]
-console.log(c1[key]);
-
+c1.draw()
 
