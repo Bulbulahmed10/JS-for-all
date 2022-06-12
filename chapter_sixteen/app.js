@@ -13,21 +13,32 @@
  
 // let result = changeToInt('hfgiuf')
 
-function makeWords(text) {
+// function makeWords(text) {
 
-  try {
-    let str = text.trim()
-    let words = str.split(' ')
-    return words
-  } catch (e) { 
-    // console.log(e.message);
-    console.log('please provide a valid text');
-  }
-  let str = text.trim()
-  let words = str.split(' ')
+//   try {
+//     let str = text.trim()
+//     let words = str.split(' ')
+//     return words
+//   } catch (e) { 
+//     // console.log(e.message);
+//     console.log('please provide a valid text');
+//   }
+//   // let str = text.trim()
+//   // let words = str.split(' ')
 
-  return words
+//   // return words
+// }
+
+// let words = makeWords(44)
+// console.log(words);
+
+try {
+  console.log('I am line 1');
+  throw new Error('I am your Error');
+  console.log('I am line 2');
+  console.log('I am line 3');
+
+} catch (e) {
+  console.log(e.message);
 }
-
-let words = makeWords(44)
-console.log(words);
+  
