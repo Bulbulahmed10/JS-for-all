@@ -40,5 +40,7 @@ try {
 
 } catch (e) {
   console.log(e.message);
+} finally {
+  console.log('I am finally block');
 }
   
