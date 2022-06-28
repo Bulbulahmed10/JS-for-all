@@ -1,28 +1,31 @@
-console.log('I am line one');
+//  function sayMyName(name) {
 
-setTimeout(() => {
-  console.log('I am line two');
-},3000)
+//   setTimeout(() => {
+//     // console.log('I have done...');
+//     console.log(name);
+//   }, 3000)
 
-setTimeout(() => {
-  console.log('I am line three');
-},0)
+//  }
 
-console.log('I am line Four');
+//  let output = sayMyName('Bulbul Ahmed')
+//  console.log(output);
 
-setTimeout(() => {
-  console.log('I am line five');
-},1000)
+AJAX
 
- function sayMyName(name) {
-  
-  setTimeout(() => {
-    // console.log('I have done...');
-    console.log(name);
-  }, 3000)
+Asynchronous Javascript and XML (JSON)
 
- }
+const xhr = new XMLHttpRequest();
+xhr.open('GET', "https://jsonplaceholder.typicode.com/users");
 
- let output = sayMyName('Bulbul Ahmed')
- console.log(output);
+xhr.onload = function (e) {
+  // if (xhr.readyState === 4) {
+  //   if(xhr.status === 200) {
+  //     console.log(xhr.response);
+  //   } else {
+  //     console.log(xhr.response);
+  //   }
+  // }
+  console.log(xhr.response);
+};
 
+xhr.send();
