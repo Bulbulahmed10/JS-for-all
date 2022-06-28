@@ -122,42 +122,105 @@
 //   });
 // });
 
+// let p1 = new Promise((resolve, reject) => {
 
-let p1 = new Promise((resolve, reject) => {
+// setTimeout(resolve, 5000, 'One')
+// })
 
-setTimeout(resolve, 5000, 'One')
-})
+// let p2 = new Promise((resolve, reject) => {
 
-let p2 = new Promise((resolve, reject) => {
+//   setTimeout(resolve, 3000, 'Two')
+//   })
 
-  setTimeout(resolve, 3000, 'Two')
-  })
+// p1.then((v) => {
 
-p1.then((v) => {
+// console.log(v);
+// })
 
-console.log(v);
-})
+// p2.then((v) => {
+//   console.log(v);
+// })
 
-p2.then((v) => {
-  console.log(v);
-})
+// function getIphone(isPassed) {
+//  return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       if (isPassed) {
+//         resolve('I have got an Iphone')
+//       } else {
+//         reject(new Error('You have Failed'))
+//       }
+//     }, 2000)
+//   })
+// }
 
-function getIphone(isPassed) {
- return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      if (isPassed) {
-        resolve('I have got an Iphone')
-      } else {
-        reject(new Error('You have Failed'))
+// getIphone(false)
+//   .then((res) => {
+//     console.log(res);
+//   })
+//   .catch((e) => {
+//     console.log(e);
+//   })
+
+const BASE_URL = 'https://jsonplaceholder.typicode.com'
+
+//  fetch(`${BASE_URL}/users/1`)
+//   .then(res => res.json())
+//   .then(data => {
+//     console.log(data)
+//     return Promise.resolve('something')
+//   })
+//   .then(str => {
+//     console.log(str);
+//     return Promise.resolve('Another Promise')
+//   })
+//   .then(another => {
+//     console.log(another);
+//   })
+//   .catch(e => {
+//     console.log(e);
+//   })
+
+// function getRequest(url, callback) {
+//   const xhr = new XMLHttpRequest();
+//   xhr.open("GET", url);
+
+//   xhr.onload = function (e) {
+//     if (xhr.readyState === 4) {
+//       if (xhr.status === 200) {
+//         let response = JSON.parse(xhr.response);
+//         callback(null, response);
+//       } else {
+//         callback(xhr.status, null);
+//       }
+//     }
+//   };
+//   xhr.send();
+// }
+
+function getRequest(url) {
+  return new Promise((resolve, reject) => {
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", url);
+
+    xhr.onload = function (e) {
+      if (xhr.readyState === 4) {
+        if (xhr.status === 200) {
+          let response = JSON.parse(xhr.response);
+          resolve(response)
+        } else {
+          reject(new Error('Error Occurred'))
+        }
       }
-    }, 2000)
-  })
+    };
+    xhr.send();
+  });
 }
+ getRequest(`${BASE_URL}/users/143`)
+  .then(data => {
+    console.log(data);
+  })
 
-getIphone(false)
-  .then((res) => {
-    console.log(res);
+  .catch(e => {
+    console.log(e.message);
   })
-  .catch((e) => {
-    console.log(e);
-  })
+
