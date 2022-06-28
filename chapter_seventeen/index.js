@@ -26,7 +26,7 @@
 //       console.log(xhr.response);
 //     }
 //   }
-  
+
 // };
 
 // xhr.send();
@@ -44,7 +44,7 @@
 //         callback(xhr.status, null)
 //       }
 //     }
-    
+
 //   }
 //   xhr.send()
 // }
@@ -66,20 +66,58 @@
 //   }
 // })
 
-let arr = [1, 2, 3, 4]
+// let arr = [1, 2, 3, 4]
 
-let sqrArr = arr.map(v => v*v)
+// let sqrArr = arr.map(v => v*v)
 
-console.log(sqrArr);
+// console.log(sqrArr);
 
-function asyncMap(arr, cb) {
-  return arr.map(v => {
-    // setTimeout(cb.bind(null, v), 0)
-    setTimeout(() => cb(v), 0)
-  })
+// function asyncMap(arr, cb) {
+//   return arr.map(v => {
+//     // setTimeout(cb.bind(null, v), 0)
+//     setTimeout(() => cb(v), 0)
+//   })
+// }
+
+// let qbArr = asyncMap(arr, v => {
+//   console.log(v)
+// })
+// console.log(qbArr)
+
+function getRequest(url, callback) {
+  const xhr = new XMLHttpRequest();
+  xhr.open("GET", url);
+
+  xhr.onload = function (e) {
+    if (xhr.readyState === 4) {
+      if (xhr.status === 200) {
+        let response = JSON.parse(xhr.response);
+        callback(null, response);
+      } else {
+        callback(xhr.status, null);
+      }
+    }
+  };
+  xhr.send();
 }
 
-let qbArr = asyncMap(arr, v => {
-  console.log(v)
-})
-console.log(qbArr)
+const BASE_URL = "https://jsonplaceholder.typicode.com";
+
+getRequest(`${BASE_URL}/post/1`, (err, res) => {
+  if (err) {
+    throw new Error("Error Occurred");
+  }
+  let { userId } = res;
+
+  getRequest(`${BASE_URL}/users/${userId}`, (err, res) => {
+    if (err) {
+      throw new Error("Error Occurred");
+    }
+    getRequest(`${BASE_URL}/posts/1/comments/${res.id}`, (err, res) => {
+      if (err) {
+        throw new Error("Error Occurred");
+      }
+      console.log(res);
+    });
+  });
+});
