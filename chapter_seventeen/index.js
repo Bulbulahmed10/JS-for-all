@@ -84,40 +84,80 @@
 // })
 // console.log(qbArr)
 
-function getRequest(url, callback) {
-  const xhr = new XMLHttpRequest();
-  xhr.open("GET", url);
+// function getRequest(url, callback) {
+//   const xhr = new XMLHttpRequest();
+//   xhr.open("GET", url);
 
-  xhr.onload = function (e) {
-    if (xhr.readyState === 4) {
-      if (xhr.status === 200) {
-        let response = JSON.parse(xhr.response);
-        callback(null, response);
+//   xhr.onload = function (e) {
+//     if (xhr.readyState === 4) {
+//       if (xhr.status === 200) {
+//         let response = JSON.parse(xhr.response);
+//         callback(null, response);
+//       } else {
+//         callback(xhr.status, null);
+//       }
+//     }
+//   };
+//   xhr.send();
+// }
+
+// const BASE_URL = "https://jsonplaceholder.typicode.com";
+
+// getRequest(`${BASE_URL}/post/1`, (err, res) => {
+//   if (err) {
+//     throw new Error("Error Occurred");
+//   }
+//   let { userId } = res;
+
+//   getRequest(`${BASE_URL}/users/${userId}`, (err, res) => {
+//     if (err) {
+//       throw new Error("Error Occurred");
+//     }
+//     getRequest(`${BASE_URL}/posts/1/comments/${res.id}`, (err, res) => {
+//       if (err) {
+//         throw new Error("Error Occurred");
+//       }
+//       console.log(res);
+//     });
+//   });
+// });
+
+
+let p1 = new Promise((resolve, reject) => {
+
+setTimeout(resolve, 5000, 'One')
+})
+
+let p2 = new Promise((resolve, reject) => {
+
+  setTimeout(resolve, 3000, 'Two')
+  })
+
+p1.then((v) => {
+
+console.log(v);
+})
+
+p2.then((v) => {
+  console.log(v);
+})
+
+function getIphone(isPassed) {
+ return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (isPassed) {
+        resolve('I have got an Iphone')
       } else {
-        callback(xhr.status, null);
+        reject(new Error('You have Failed'))
       }
-    }
-  };
-  xhr.send();
+    }, 2000)
+  })
 }
 
-const BASE_URL = "https://jsonplaceholder.typicode.com";
-
-getRequest(`${BASE_URL}/post/1`, (err, res) => {
-  if (err) {
-    throw new Error("Error Occurred");
-  }
-  let { userId } = res;
-
-  getRequest(`${BASE_URL}/users/${userId}`, (err, res) => {
-    if (err) {
-      throw new Error("Error Occurred");
-    }
-    getRequest(`${BASE_URL}/posts/1/comments/${res.id}`, (err, res) => {
-      if (err) {
-        throw new Error("Error Occurred");
-      }
-      console.log(res);
-    });
-  });
-});
+getIphone(false)
+  .then((res) => {
+    console.log(res);
+  })
+  .catch((e) => {
+    console.log(e);
+  })
