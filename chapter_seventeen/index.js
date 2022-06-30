@@ -302,10 +302,41 @@ const BASE_URL = 'https://jsonplaceholder.typicode.com'
 // }
 // fetchData()
 
-let promises = [Promise.resolve(1), Promise.resolve(2), Promise.resolve(3)]
+// let promises = [Promise.resolve(1), Promise.resolve(2), Promise.resolve(3)]
 
-async function promiseAll() {
-  let result = await Promise.all(promises)
-  console.log(result);
+// async function promiseAll() {
+//   let result = await Promise.all(promises)
+//   console.log(result);
+// }
+// promiseAll()
+
+let asyncIterable = {
+  [Symbol.asyncIterator]() {
+    let i = 0
+    return {
+      next() {
+        if (i < 5) {
+          return Promise.resolve({
+            value: i++,
+            done: false
+          })
+        } else {
+          return Promise.resolve({
+            done: true
+          })
+        }
+      }
+    }
+  }
 }
-promiseAll()
+
+let iterate = asyncIterable[Symbol.asyncIterator]();
+
+(async function () {
+  console.log(await iterate.next());
+  console.log(await iterate.next());
+  console.log(await iterate.next());
+  console.log(await iterate.next());
+  console.log(await iterate.next());
+  console.log(await iterate.next());
+})()
