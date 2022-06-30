@@ -224,46 +224,88 @@ const BASE_URL = 'https://jsonplaceholder.typicode.com'
 //     console.log(e.message);
 //   })
 
-const delay = s => new Promise(resolve => setTimeout(resolve, s*1000))
+// const delay = s => new Promise(resolve => setTimeout(resolve, s*1000))
 
-delay(2).then(() => console.log('2 Seconds Delay'))
-delay(1).then(() => console.log('1 Seconds Delay'))
-delay(3).then(() => console.log('3 Seconds Delay'))
-delay(2).then(() => console.log('2 Seconds Delay'))
-delay(5).then(() => console.log('5 Seconds Delay'))
+// delay(2).then(() => console.log('2 Seconds Delay'))
+// delay(1).then(() => console.log('1 Seconds Delay'))
+// delay(3).then(() => console.log('3 Seconds Delay'))
+// delay(2).then(() => console.log('2 Seconds Delay'))
+// delay(5).then(() => console.log('5 Seconds Delay'))
 
-let p1 = Promise.resolve('Test')
-p1.then(v => console.log(v))
+// let p1 = Promise.resolve('Test')
+// p1.then(v => console.log(v))
 
-let p2 = Promise.reject('REJECT')
-p2.catch(e => console.log(e))
+// let p2 = Promise.reject('REJECT')
+// p2.catch(e => console.log(e))
 
-let p1 = Promise.resolve('One')
-let p2 = Promise.resolve('Two')
-let p3 = Promise.resolve('Three')
+// let p1 = Promise.resolve('One')
+// let p2 = Promise.resolve('Two')
+// let p3 = Promise.resolve('Three')
 
-let promiseArr = [p1, p2, p3]
-Promise.all(promiseArr)
-  .then(arr => {
-    console.log(arr);
-  })
+// let promiseArr = [p1, p2, p3]
+// Promise.all(promiseArr)
+//   .then(arr => {
+//     console.log(arr);
+//   })
 
-let p1 = new Promise(resolve => {
-  setTimeout(resolve, 5000, 'One')
-})
+// let p1 = new Promise(resolve => {
+//   setTimeout(resolve, 5000, 'One')
+// })
 
-let p2 = new Promise(resolve => {
-  setTimeout(resolve, 3000, 'Two')
-})
+// let p2 = new Promise(resolve => {
+//   setTimeout(resolve, 3000, 'Two')
+// })
 
-let p3 = new Promise(resolve => {
-  setTimeout(resolve, 4000, 'Three')
-})
+// let p3 = new Promise(resolve => {
+//   setTimeout(resolve, 4000, 'Three')
+// })
 
-let promiseArr = [p1, p2, p3]
+// let promiseArr = [p1, p2, p3]
 
-Promise.all(promiseArr)
-.then(arr => console.log(arr))
+// Promise.all(promiseArr)
+// .then(arr => console.log(arr))
 
-Promise.race(promiseArr)
-.then(v => console.log(v))
+// Promise.race(promiseArr)
+// .then(v => console.log(v))
+
+
+// function myPromise() {
+//   return Promise.resolve('Test Value')
+// }
+
+// console.log(myPromise());
+
+// async function test() {
+//   return 'Test'
+// }
+// test().then(v => alert(v))
+
+// let p1 = Promise(resolve => {
+//   setTimeout(resolve, 5000, 'test value')
+// })
+
+// async function myAsyncFunc() {
+//   // p1.then(v => alert(v))
+//   let v = await p1
+//   console.log(v);
+// }
+
+// myAsyncFunc()
+ 
+// async function fetchData () {
+//  let res = await fetch('https://jsonplaceholder.typicode.com/users')
+
+//  let data = await res.json()
+//  let names = data.map(u => u.name)
+//  console.log(names);
+//  console.log(data);
+// }
+// fetchData()
+
+let promises = [Promise.resolve(1), Promise.resolve(2), Promise.resolve(3)]
+
+async function promiseAll() {
+  let result = await Promise.all(promises)
+  console.log(result);
+}
+promiseAll()
